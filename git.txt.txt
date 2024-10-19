@@ -1,0 +1,463 @@
+
+vidya@DESKTOP-K8K914T MINGW64 ~ (master)
+$ git --version
+git version 2.45.2.windows.1
+
+vidya@DESKTOP-K8K914T MINGW64 ~ (master)
+$ git config --global user.name "Vaishnavi Ashok Phapale"
+
+vidya@DESKTOP-K8K914T MINGW64 ~ (master)
+$ git config --global user.email "vaishnaviphapale226@gmail.com"
+
+vidya@DESKTOP-K8K914T MINGW64 ~ (master)
+$ git config --global user.email
+vaishnaviphapale226@gmail.com
+
+vidya@DESKTOP-K8K914T MINGW64 ~ (master)
+$ git config --global --edit
+
+vidya@DESKTOP-K8K914T MINGW64 ~ (master)
+$ mkdir LetsLearnGit
+
+vidya@DESKTOP-K8K914T MINGW64 ~ (master)
+$ cd LetsLearnGit/
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (master)
+$ git init
+Initialized empty Git repository in C:/Users/vidya/LetsLearnGit/.git/
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ ls
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ ls -a
+./  ../  .git/
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ ^C
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ ^C
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ cd ~/LetsLearnGit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ code .
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sum.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git add sum.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   sum.java
+
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git commit -m "initial commit"
+[main (root-commit) 1bd565c] initial commit
+ 1 file changed, 11 insertions(+)
+ create mode 100644 sum.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git log
+commit 1bd565c39088e13718d2935e54d2fb580d84d63d (HEAD -> main)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:10:24 2024 +0530
+
+    initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sum.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sum.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        diff.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git commit -m "adding"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sum.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        diff.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git restore diff.java
+error: pathspec 'diff.java' did not match any file(s) known to git
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git restore sum.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        diff.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sum.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        diff.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git add diff.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   diff.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sum.java
+
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git commit -m "addding diff.java"
+[main a3b325d] addding diff.java
+ 1 file changed, 4 insertions(+)
+ create mode 100644 diff.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git log
+commit a3b325dbec539c0750c96c6f38c1a15817ea984c (HEAD -> main)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:20:03 2024 +0530
+
+    addding diff.java
+
+commit 1bd565c39088e13718d2935e54d2fb580d84d63d
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:10:24 2024 +0530
+
+    initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sum.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git add .
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git commit -m "added all files"
+[main 94589b0] added all files
+ 1 file changed, 1 insertion(+)
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git log
+commit 94589b017abd52794bc92713247f6fbfedc75bc7 (HEAD -> main)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:22:35 2024 +0530
+
+    added all files
+
+commit a3b325dbec539c0750c96c6f38c1a15817ea984c
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:20:03 2024 +0530
+
+    addding diff.java
+
+commit 1bd565c39088e13718d2935e54d2fb580d84d63d
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:10:24 2024 +0530
+
+    initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git checkout 1bd565c39088e13718d2935e54d2fb580d84d63d
+Note: switching to '1bd565c39088e13718d2935e54d2fb580d84d63d'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 1bd565c initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit ((1bd565c...))
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit ((1bd565c...))
+$ git branch -a
+* (HEAD detached at 1bd565c)
+  main
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit ((1bd565c...))
+$ git checkout main
+Previous HEAD position was 1bd565c initial commit
+Switched to branch 'main'
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git branch
+* main
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git log
+commit 94589b017abd52794bc92713247f6fbfedc75bc7 (HEAD -> main)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:22:35 2024 +0530
+
+    added all files
+
+commit a3b325dbec539c0750c96c6f38c1a15817ea984c
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:20:03 2024 +0530
+
+    addding diff.java
+
+commit 1bd565c39088e13718d2935e54d2fb580d84d63d
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:10:24 2024 +0530
+
+    initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git branch dev
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git branch -a
+  dev
+* main
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git checkout dev
+Switched to branch 'dev'
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (dev)
+$ git checkout -b vaishnavi/multiply
+Switched to a new branch 'vaishnavi/multiply'
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (vaishnavi/multiply)
+$ git status
+On branch vaishnavi/multiply
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        multiply.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (vaishnavi/multiply)
+$ git add .
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (vaishnavi/multiply)
+$ git status
+On branch vaishnavi/multiply
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   multiply.java
+
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (vaishnavi/multiply)
+$ git commit -m "added multiply.java"
+[vaishnavi/multiply 2deb27f] added multiply.java
+ 1 file changed, 12 insertions(+)
+ create mode 100644 multiply.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (vaishnavi/multiply)
+$ git checkout dev
+Switched to branch 'dev'
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (dev)
+$ git merge vaishnavi/multiply
+Updating 94589b0..2deb27f
+Fast-forward
+ multiply.java | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 multiply.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (dev)
+$ git log
+commit 2deb27fe879ceec27593d578f77032c61c3ea045 (HEAD -> dev, vaishnavi/multiply)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:38:15 2024 +0530
+
+    added multiply.java
+
+commit 94589b017abd52794bc92713247f6fbfedc75bc7 (main)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:22:35 2024 +0530
+
+    added all files
+
+commit a3b325dbec539c0750c96c6f38c1a15817ea984c
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:20:03 2024 +0530
+
+    addding diff.java
+
+commit 1bd565c39088e13718d2935e54d2fb580d84d63d
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:10:24 2024 +0530
+
+    initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (dev)
+$ git checkout main
+Switched to branch 'main'
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git log
+commit 94589b017abd52794bc92713247f6fbfedc75bc7 (HEAD -> main)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:22:35 2024 +0530
+
+    added all files
+
+commit a3b325dbec539c0750c96c6f38c1a15817ea984c
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:20:03 2024 +0530
+
+    addding diff.java
+
+commit 1bd565c39088e13718d2935e54d2fb580d84d63d
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:10:24 2024 +0530
+
+    initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git merge dev
+Updating 94589b0..2deb27f
+Fast-forward
+ multiply.java | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 multiply.java
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git log
+commit 2deb27fe879ceec27593d578f77032c61c3ea045 (HEAD -> main, vaishnavi/multiply, dev)
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:38:15 2024 +0530
+
+    added multiply.java
+
+commit 94589b017abd52794bc92713247f6fbfedc75bc7
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:22:35 2024 +0530
+
+    added all files
+
+commit a3b325dbec539c0750c96c6f38c1a15817ea984c
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:20:03 2024 +0530
+
+    addding diff.java
+
+commit 1bd565c39088e13718d2935e54d2fb580d84d63d
+Author: Vaishnavi Ashok Phapale <vaishnaviphapale226@gmail.com>
+Date:   Thu Oct 17 08:10:24 2024 +0530
+
+    initial commit
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ touch .gitignore
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        secretkey.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+vidya@DESKTOP-K8K914T MINGW64 ~/LetsLearnGit (main)
+$
